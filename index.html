@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Financial Document Intelligence Agent for SMEs — Upload financial documents and get autonomous AI-powered analysis, gap detection, and forward-looking insights.">
+  <title>FinSight AI — Financial Document Intelligence Agent</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">📊</div>
+        <div class="logo-text">Fin<span>Sight</span> AI</div>
+      </div>
+      <div class="header-badge">
+        <span class="dot"></span>
+        Agent Ready
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ MAIN CONTENT ═══════════ -->
+  <main class="main">
+
+    <!-- ──────── UPLOAD VIEW ──────── -->
+    <section id="upload-view" class="upload-view">
+      <div class="upload-hero">
+        <h1>Financial Intelligence, Instantly</h1>
+        <p>Upload your financial documents — invoices, P&L statements, balance sheets — and let the agent deliver structured insights autonomously.</p>
+      </div>
+
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">📁</div>
+        <div class="dropzone-text">
+          <h3>Drop your financial documents here</h3>
+          <p>or <span class="browse-link" id="browse-trigger">browse files</span></p>
+        </div>
+        <div class="format-badges">
+          <span class="format-badge">.CSV</span>
+          <span class="format-badge">.PDF</span>
+          <span class="format-badge">.XLSX</span>
+          <span class="format-badge">.JPG / .PNG</span>
+          <span class="format-badge">.TXT</span>
+        </div>
+        <input type="file" class="file-input" id="file-input" multiple
+               accept=".csv,.pdf,.xlsx,.xls,.jpg,.jpeg,.png,.bmp,.tiff,.tif,.webp,.txt,.text,.md">
+      </div>
+
+      <div class="uploaded-files" id="uploaded-files"></div>
+
+      <div class="upload-actions">
+        <button class="analyze-btn" id="analyze-btn" disabled>
+          🤖 Begin Autonomous Analysis
+        </button>
+        <span class="upload-actions-divider">or</span>
+        <button class="sample-btn" id="sample-btn">
+          📂 Load Sample Financial Data
+        </button>
+      </div>
+    </section>
+
+    <!-- ──────── PROCESSING VIEW ──────── -->
+    <section id="processing-view" class="processing-view">
+      <div class="agent-animation">
+        <div class="agent-ring"></div>
+        <div class="agent-ring"></div>
+        <div class="agent-ring"></div>
+        <div class="agent-core">🤖</div>
+      </div>
+
+      <div class="processing-status">
+        <h2>Agent is Analyzing...</h2>
+        <p id="processing-text">Parsing uploaded documents</p>
+      </div>
+
+      <div class="processing-steps" id="processing-steps">
+        <div class="step-item active" data-step="1">
+          <div class="step-icon">1</div>
+          <span>Parsing documents</span>
+        </div>
+        <div class="step-item" data-step="2">
+          <div class="step-icon">2</div>
+          <span>Normalizing financial data</span>
+        </div>
+        <div class="step-item" data-step="3">
+          <div class="step-icon">3</div>
+          <span>Analyzing current state</span>
+        </div>
+        <div class="step-item" data-step="4">
+          <div class="step-icon">4</div>
+          <span>Detecting gaps</span>
+        </div>
+        <div class="step-item" data-step="5">
+          <div class="step-icon">5</div>
+          <span>Generating forward-looking flags</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────── DASHBOARD VIEW ──────── -->
+    <section id="dashboard-view" class="dashboard-view">
+
+      <!-- Dashboard Header -->
+      <div class="dashboard-header">
+        <div class="dashboard-title">
+          <h2>📊 Financial Intelligence Report</h2>
+          <p id="dashboard-subtitle">Analysis complete — 3 documents processed</p>
+        </div>
+        <div class="dashboard-actions">
+          <button class="btn-secondary" id="new-analysis-btn">
+            ← New Analysis
+          </button>
+        </div>
+      </div>
+
+      <!-- Summary Cards -->
+      <div class="summary-cards stagger-in" id="summary-cards"></div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid" id="charts-section"></div>
+
+      <!-- Tab Navigation -->
+      <nav class="tab-nav" id="tab-nav">
+        <button class="tab-btn active" data-tab="current-state" id="tab-current-state">
+          📈 Current State
+          <span class="tab-count" id="count-insights">0</span>
+        </button>
+        <button class="tab-btn" data-tab="gaps" id="tab-gaps">
+          🔍 Gap Detection
+          <span class="tab-count" id="count-gaps">0</span>
+        </button>
+        <button class="tab-btn" data-tab="flags" id="tab-flags">
+          🚩 Forward-Looking Flags
+          <span class="tab-count" id="count-flags">0</span>
+        </button>
+      </nav>
+
+      <!-- Tab Panels -->
+      <div id="panel-current-state" class="tab-panel active">
+        <div class="insights-grid stagger-in" id="insights-container"></div>
+      </div>
+
+      <div id="panel-gaps" class="tab-panel">
+        <div id="gaps-container" class="stagger-in"></div>
+      </div>
+
+      <div id="panel-flags" class="tab-panel">
+        <div id="flags-container" class="stagger-in"></div>
+      </div>
+
+      <!-- Source Documents Panel -->
+      <div class="sources-panel" id="sources-panel">
+        <h3>📎 Source Documents</h3>
+        <div class="source-list" id="source-list"></div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <span class="disclaimer-icon">⚠️</span>
+        <div>
+          <strong>Agent Boundary:</strong> This analysis is based solely on the uploaded documents.
+          The agent does not provide tax guidance, investment recommendations, or audit opinions.
+          All insights are traceable to source data. Where a figure cannot be derived from uploaded content,
+          the agent explicitly states so.
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+Invoice ID,Customer Name,Invoice Date,Due Date,Amount,Status,Payment Date,Days Overdue,Category
+INV-001,Acme Corp,2024-10-05,2024-11-04,45000,Paid,2024-11-02,0,Services
+INV-002,Beta Industries,2024-10-08,2024-11-07,32000,Paid,2024-11-15,8,Products
+INV-003,Gamma Solutions,2024-10-12,2024-11-11,28500,Overdue,,54,Services
+INV-004,Delta Tech,2024-10-15,2024-11-14,67000,Paid,2024-11-10,0,Products
+INV-005,Epsilon Ltd,2024-10-20,2024-11-19,15000,Overdue,,46,Services
+INV-006,Zeta Holdings,2024-10-25,2024-11-24,89000,Paid,2024-12-01,7,Products
+INV-007,Eta Enterprises,2024-11-01,2024-12-01,23000,Overdue,,34,Services
+INV-008,Theta Corp,2024-11-05,2024-12-05,54000,Paid,2024-12-03,0,Products
+INV-009,Iota Systems,2024-11-10,2024-12-10,41000,Overdue,,25,Services
+INV-010,Kappa Inc,2024-11-15,2024-12-15,36500,Paid,2024-12-14,0,Products
+INV-011,Lambda Group,2024-11-20,2024-12-20,72000,Overdue,,15,Services
+INV-012,Mu Technologies,2024-11-25,2024-12-25,19500,Pending,,10,Products
+INV-013,Nu Digital,2024-12-01,2024-12-31,58000,Pending,,4,Services
+INV-014,Xi Partners,2024-12-05,2025-01-04,33000,Pending,,0,Products
+INV-015,Omicron Ltd,2024-12-10,2025-01-09,47500,Pending,,0,Services
+INV-016,Acme Corp,2024-12-12,2025-01-11,52000,Pending,,0,Services
+INV-017,Beta Industries,2024-12-15,2025-01-14,28000,Pending,,0,Products
+INV-018,Delta Tech,2024-12-18,2025-01-17,41000,Pending,,0,Products
+INV-019,Gamma Solutions,2024-12-20,2025-01-19,63000,Pending,,0,Services
+INV-020,Zeta Holdings,2024-12-22,2025-01-21,95000,Pending,,0,Products
